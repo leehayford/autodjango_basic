@@ -1,70 +1,44 @@
-# requires python
-# runs on windows_cmd || linux_bash
-#   ..>||$ python autodjango.py your_project_name
+#Creates a blank-ish, one-page django project called `your_project_name` in a virtual environment and runs the server.
+#- home page: ... _localhost:8000/_
+#- admin page: ... _localhost:8000/adimn/_
+#- database: ... _your_project_name /src / db.sqlite3_
+#- templates: ... _base.html_ ... _app_main / home.html_
 
-# makes directory ../your_project_name
-# activates virtual environment pyvenv
-#   installs local django==3.0.8
+##### How to:
+#1. Clone this repo into
+#_.~/your_projects_directory/_
+#. On the command line
+#  - $ `cd` `your_projects_directory`
 
-# makes directory ../your_project_name/src/
-#   which will house all of the project files:
-#       html
-#       css
-#       js
-#       python
-#       database
-#       media
+# - $ `python` `autodjango/autodjango.py` `your_project_name`
 
-# makes the following directories and files in
-# ../your_project_name/src:
+#3. Autodgango makes the following directories and files:
+#  - _your_project_name / src / project_master / settings.py_
+#  - _your_project_name / src / project_master /_
+#  - _your_project_name / src / app_main /_
+#  - _your_project_name / src / app_main / migrations /_
+#  - _your_project_name / src / templates / base.html_
+#  - _your_project_name / src / templates / app_main /_
+#  - _your_project_name / src / templates / app_main / home.html_
+#  - _your_project_name / src / static /_
+#  - _your_project_name / src / static / css /_
+#  - _your_project_name / src / static / css /main.css_
+#  - _your_project_name / src / static / js /_
+#  - _your_project_name / src / static / js /main.js_
+#  - _your_project_name / src / static / media /_
 
-    #   project_master/
-    #   project_master/settings.py
-    #   project_master/urls.py
-    #   project_master/... amoung others
+#4. $ `a_user_name`
 
-    #   app_main/
-    #   app_main/migrations/
-    #   app_main/admin.py
-    #   app_main/views.py
-    #   app_main/models.py
-    #   app_main/... amoung others
+#5. $ `an_email` ... or not ...
 
-    #   templates/
-    #   templates/base.html
-    #   templates/app_main/
-    #   templates/app_main/home.html
+#6. $ `a_password` ... twice
 
-    #   static/
-    #   static/css/
-    #   static/css/main.css
-    #   static/js/
-    #   static/js/main.js
-    #   static/media/
+#7. $ `y` ... to run the server now
 
-# the result is a django project with:
-
-#   database @ ../your_project_name/src/db.sqlite3
-#   database superuser
-
-#   templates/base.html:
-#       {% load static %} is added
-#       html bare bones
-#           link to static/css/main.css { placeholder styled are added }
-#           ink to static/s/main.js { // a comment is added }
-#           <header>
-#           {% block main %}{% endblock main %}
-#           <footer>
-
-#   templates/app_main/home.html:
-#       extends templates/base.html
-#       {% block main %}{% endblock main %}
-#
-#   opens vscode @ ../your_project_name/
-#
-#   mange.py runserver is called
-#   home page @ localhost:8000/
-#   admin page @ localhost:8000/adimn/
+#8. Log into _localhost:8000 / admin_
+#9. Go to _localhost:8000_ to see your empty home page.\
+#Styles from _your_project_name / src / static / css /main.css_ are being applied; go replace them
+#10. Open _~/ your_project_name /_ in a code editor and start <div>ing and .style{ ing }
 
 import sys
 import os
@@ -158,10 +132,10 @@ with open(ACTIVATE_VENV) as f:
     basehtml ='{% load static %}\n'
     basehtml +='<!doctype html>\n'
     basehtml +='<html  lang="en">\n'
+    basehtml +='\t\t<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">\n'
     basehtml +='\t<head>\n'
     basehtml +='\t\t<script src="{% static "js/main.js" %}"></script>\n'
     basehtml +='\t\t<link rel="stylesheet" href="{% static "css/main.css" %}" type="text/css">\n'
-    basehtml +='\t\t<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">\n'
     basehtml +='\t</head>\n'
     basehtml +='\t<body>\n'
     basehtml +=f'\t\t<header id="base-header"><div>{ TEMPLATES } base.html header - { sys.platform }</div></header>\n'
