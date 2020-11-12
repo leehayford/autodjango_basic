@@ -13,14 +13,14 @@
 #  - creates and edits **html** templates :\
 #    _~/../src/templates/base.html_\
 #    _~/../src/templates/app_main/home.html_
-#  - and optionally, runs the server (y/n)\
-#    - home page : **localhost:8000**\
-#    - admin log in page : **localhost:8000/adimn**
+#  - and optionally, **starts the development server** ... there's a (y/n)\
+#    home page : **localhost:8000**\
+#    admin log in page : **localhost:8000/adimn**
 ##### How to do :
 #1. Clone this repo into
 #_.~/your_projects_directory/_
 #2. _~/$_ `cd` `your_projects_directory`
-#3. _~/$_ `python` `autodjango/autodjango.py` `your_project_name`
+#3. _~/$_ `python` `autodjango/autodjango_basic.py` `your_project_name`
 #4. Autodgango makes and edits the following directories and files:
 #    -  _your_project_name / src / project_master / settings.py_
 #    -  _your_project_name / src / project_master /_
@@ -47,7 +47,8 @@
 # both of those files need `your_attention`.
 #  - _~/../src/static/css/main.css_\
 #  is styling those html files... nearly... `your_attention(main.css).also`.
-#11. Open _~/.../_ in a code editor and make stuff happen avec the html, css, js, and py; allons-y!
+#11. Open _~/.../_ in a code editor and make stuff happen avec the html, css, js, and py.
+#Allons-y!
 
 
 import sys
