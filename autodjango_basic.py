@@ -20,7 +20,7 @@
 #1. Clone this repo into
 #_.~/your_projects_directory/_
 #2. _~/$_ `cd` `your_projects_directory`
-#3. _~/$_ `python` `autodjango/autodjango_basic.py` `your_project_name`
+#3. _~/$_ `python` `autodjango_basic.py` `your_project_name`
 #4. Autodgango makes and edits the following directories and files:
 #    -  _your_project_name / src / project_master / settings.py_
 #    -  _your_project_name / src / project_master /_
@@ -39,14 +39,14 @@
 #6. _~/$_ `an_email` ... or not ...
 #7. _~/$_ `a_password` ... twice
 #8. _~/$_ `y` ... to run the server now
-#9. Log into **localhost:8000 / admin**
-#10. Go to **localhost:8000** to see your empty home page.
+#9. Go to **localhost:8000** to see your empty home page.
 #  - _~/../src/templates/app_main/home.html_\
 #   is presented in a block, in the body of\
 #  _~/../src/templates/base.html_;\
 # both of those files need `your_attention`.
 #  - _~/../src/static/css/main.css_\
 #  is styling those html files... nearly... `your_attention(main.css).also`.
+#10. Log into **localhost:8000 / admin**
 #11. Open _~/.../_ in a code editor and make stuff happen avec the html, css, js, and py.
 #Allons-y!
 
