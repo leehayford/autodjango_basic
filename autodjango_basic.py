@@ -121,8 +121,7 @@ with open(ACTIVATE_VENV) as f:
     os.system( f'django-admin startproject project_master { PROJECT_SRC }')
     print( f'django-admin startproject project_master { PROJECT_SRC } ... OK')
 
-    # this might not be necessary at the moment ...
-    # with open( f'{ PROJECT_SRC }requirements.txt', "a") as b: b.write('')
+# create requirements file for deployment ...
     os.system(f'pip freeze > { PROJECT_SRC }requirements.txt')
 
 # create database
