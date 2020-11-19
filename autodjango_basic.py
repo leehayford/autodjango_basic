@@ -78,10 +78,10 @@ elif(sys.platform == 'linux'):
     CREATE_SUPER_USER = f'python'
     START_CHROME = f'start chrome localhost:8000 localhost:8000/admin'
 
-#virtual environment
+# virtual environment
 PROJECT_SRC = f'{ PROJECT }{ SL }src{ SL }'
 
-#django project
+# django project
 PROJECT_MASTER = f'{ PROJECT_SRC }project_master{ SL }'
 MANAGE_PY = f'{PROJECT_SRC}manage.py'
 CREATE_SUPER_USER += f' { MANAGE_PY } createsuperuser'
@@ -89,17 +89,17 @@ SETTINGS_PY = f'{ PROJECT_MASTER }settings.py'
 URLS_PY = f'{ PROJECT_MASTER }urls.py'
 DATABASE = f'{ PROJECT_SRC }db.sqlite3'
 
-#django app
+# django app
 APP_MAIN = f'{ PROJECT_SRC }app_main'
 APP_MAIN_MODELS_PY = f'{ APP_MAIN }{ SL }models.py'
 APP_MAIN_ADMIN_PY = f'{ APP_MAIN }{ SL }admin.py'
 APP_MAIN_VIEWS_PY = f'{ APP_MAIN }{ SL }views.py'
 DJANGO_START_APP = f'django-admin startapp app_main'
-#templates
+# templates
 TEMPLATES = f'{ PROJECT_SRC }templates{ SL }'
 TEMPLATES_APP_MAIN = f'{ TEMPLATES }app_main{ SL }'
 
-#static
+# static
 STATIC = f'{ PROJECT_SRC }static{ SL }'
 CSS = f'{ STATIC }css{ SL }'
 JS = f'{ STATIC }js{ SL }'
@@ -108,7 +108,7 @@ MEDIA = f'{ STATIC }media{ SL }'
 os.system( f'mkdir { PROJECT }' )
 os.system( f'virtualenv { PROJECT }' )
 
-# - activate virtual environment -
+# activate virtual environment
 with open(ACTIVATE_VENV) as f:
     code = compile(f.read(), ACTIVATE_VENV, 'exec')
     exec(code, dict(__file__=ACTIVATE_VENV))
@@ -122,8 +122,8 @@ with open(ACTIVATE_VENV) as f:
     print( f'django-admin startproject project_master { PROJECT_SRC } ... OK')
 
     # this might not be necessary at the moment ...
-    with open( f'{ PROJECT_SRC }requirements.txt', "a") as b: b.write('')
-    os.system(f'pip freeze { PROJECT_SRC }requirements.txt')
+    # with open( f'{ PROJECT_SRC }requirements.txt', "a") as b: b.write('')
+    os.system(f'pip freeze > { PROJECT_SRC }requirements.txt')
 
 # create database
     os.system(f'{ MAKE_FILE } { DATABASE }')
