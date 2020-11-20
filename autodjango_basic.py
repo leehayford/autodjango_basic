@@ -146,6 +146,7 @@ with open(ACTIVATE_VENV) as f:
     basehtml +='\t<head>\n'
     basehtml +='\t\t<script src="{% static "js/main.js" %}"></script>\n'
     basehtml +='\t\t<link rel="stylesheet" href="{% static "css/main.css" %}" type="text/css">\n'
+    basehtml +='\t\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
     basehtml +='\t</head>\n'
     basehtml +='\t<body>\n'
     basehtml +=f'\t\t<header id="base-header"><div>{ TEMPLATES } base.html header - { sys.platform }</div></header>\n'
