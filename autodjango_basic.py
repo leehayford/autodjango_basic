@@ -168,10 +168,10 @@ with open(ACTIVATE_VENV) as f:
 #create static/css, static/js, atatic/media
     os.system( f'mkdir { STATIC }')
 
-    maincss ='body { \nfont-family: Roboto; \ndisplay: flex; \nflex-direction: column;\n}\n'
-    maincss +='#base-header { \ncolor: rgb(28, 101, 173); \n}\n'
-    maincss +='#base-footer { \ncolor: rgb(22, 165, 58); \n}\n'
-    maincss +='#app-main-home { \ncolor: rgb(209, 135, 24); \n}\n'
+    maincss ='* { \nmargin: 0px;\npadding: 0px;\nbox-sizing: border-box;\n--red: rgb(180, 0, 0);\n--green: rgb(0, 180, 0);\n--blue: rgb(0, 0, 180);\n }\n'
+    maincss +='#base-header { \ncolor: var(--red); \n}\n'
+    maincss +='#base-footer { \ncolor: var(--green); \n}\n'
+    maincss +='#app-main-home { \ncolor: var(--blue); \n}\n'
     os.system( f'mkdir { CSS }')
     with open(f'{ CSS }main.css', "a") as h:
         h.write(maincss)
