@@ -168,7 +168,7 @@ with open(ACTIVATE_VENV) as f:
 #create static/css, static/js, atatic/media
     os.system( f'mkdir { STATIC }')
 
-    maincss ='* { \nmargin: 0px;\npadding: 0px;\nbox-sizing: border-box;\n--red: rgb(180, 0, 0);\n--green: rgb(0, 180, 0);\n--blue: rgb(0, 0, 180);\n }\n'
+    maincss ='* { \nmargin: 0px;\npadding: 0px;\nbox-sizing: border-box;\nfont-family:Roboto;\n--red: rgb(180, 0, 0);\n--green: rgb(0, 180, 0);\n--blue: rgb(0, 0, 180);\n }\n'
     maincss +='#base-header { \ncolor: var(--red); \n}\n'
     maincss +='#base-footer { \ncolor: var(--green); \n}\n'
     maincss +='#app-main-home { \ncolor: var(--blue); \n}\n'
@@ -227,6 +227,13 @@ with open(ACTIVATE_VENV) as f:
         "from django.http import HttpResponse\n\ndef app_main_view(request, *args, **kwargs):\n\treturn render(request, 'app_main/home.html', {})"
         )
 
+# initiate git repository and commit
+    os.system(f'cd { PROJECT_SRC }; git init')
+    os.system(f'cd { PROJECT_SRC }; git config user.email "{ PROJECT }@autodjango_basic.com"')
+    os.system(f'cd { PROJECT_SRC }; git config user.name "{ PROJECT }"')
+    os.system(f'cd { PROJECT_SRC }; git add .')
+    os.system(f'cd { PROJECT_SRC }; git commit -m "{ PROJECT } bones"')
+
 #slap ass
     print(f'***\nproject directory:\n { os.getcwd() }{ SL }{ PROJECT }\n***\n')
 
@@ -238,6 +245,5 @@ with open(ACTIVATE_VENV) as f:
 
     print(f'shall we run the server now? y/n:')
     if(input() == 'y'):
-
         os.system( START_CHROME ) # TODO: open common browsers... add, test browser options...
         os.system( f'python { MANAGE_PY } runserver')
